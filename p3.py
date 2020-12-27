@@ -1,3 +1,7 @@
+'''
+What is the largest prime factor of the number 600851475143 ?
+'''
+
 n = 600851475143
 
 def isPrime(n):
@@ -9,13 +13,10 @@ def isPrime(n):
 				return False
 	return True
 
-oldfactor = 0
-newfactor = 1
-while oldfactor != newfactor:
-	oldfactor = newfactor
-	for i in range(2, n):
+while n != 1:
+	for i in range(2, n+1):
 		if isPrime(i) and n % i == 0:
-			newfactor = i
-			n = n // newfactor
+			factor = i
+			n = n // factor
 			break
-print(n)
+print(factor)
